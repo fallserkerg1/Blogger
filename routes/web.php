@@ -13,12 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::redirect('/', 'blog');
+Route::redirect('/', 'inicio');
 
 Auth::routes();
 
 //Blog
 
+/*
 //web
 Route::get('blog', 'Web\PageController@blog')->name('blog');
 Route::get('blog/{slug}','Web\PageController@post')->name('post');
@@ -28,11 +29,11 @@ Route::get('tag/{slug}','Web\PageController@tag')->name('tag');
 Route::resource('tags', 'Admin\TagController');
 Route::resource('categories', 'Admin\CategoryController');
 Route::resource('posts', 'Admin\PostController');
-
+*/
 
 // Plantilla
 
-/*
+
 //web
 Route::get('/inicio','Blog\BlogController@index')->name('index');
 Route::get('inicio/{slug}','Blog\BlogController@post')->name('post');
@@ -42,4 +43,3 @@ Route::get('tag/{slug}','Blog\BlogController@tag')->name('tag');
 Route::resource('tags', 'Admin\TagController');
 Route::resource('categories', 'Admin\CategoryController');
 Route::resource('posts', 'Admin\PostController');
-*/

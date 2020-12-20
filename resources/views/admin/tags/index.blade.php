@@ -7,10 +7,12 @@
 		<div class="col-lg-8 col-md-10 mx-auto">
 			<div class="card-body">
 			<div class="panel-heading">
-				<h2>Lista de Etiquetas</h2><br>
-				<a href="{{ route('tags.create')}}" class="btn btn-sm btn-primary pull-right">
+				<h2>Lista de Etiquetas</h2>
+				<a href="{{ route('tags.create')}}" style ="float:right;" class="btn btn-outline-info pull-right">
 					Crear
-				</a>				
+				</a>	
+        <br>
+        <br>			
 			</div>
 		<div class="panel-body">
 				<div class="card-body">
@@ -19,7 +21,7 @@
                   <tr>
                     <th width="10px">ID</th>
                     <th>Nombre</th>
-                    <th colspan="3">&nbsp;</th>
+                    <th colspan="3">&nbsp;Acciones</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -28,7 +30,7 @@
                     <td>{{ $tag->id }}</td>
                     <td>{{ $tag->name }}</td>
                     <td width="10px">
-                    	<a href="{{ route('tags.show', $tag->id )}}" class="btn btn-primary">
+                    	<a href="{{ route('tags.show', $tag->id )}}" type="button" class="btn btn-primary">
                     		Ver
                     	</a>
                     </td>
@@ -38,9 +40,10 @@
                     	</a>
                     </td>
                     <td width="10px">
-                    	<a href="{{ route('tags.show', $tag->id )}}" class="btn btn-danger">
-                    		Eliminar
-                    	</a>
+                    	<form method="POST" action="{{ route('tags.destroy',$tag->id)}}">
+				          @csrf @method('DELETE')
+				            <button class="btn btn-danger">Eliminar</button>
+				        </form>	
                     </td>
                   </tr>
                   	@endforeach
@@ -52,5 +55,4 @@
 		</div>
 	</div>
 </div>
-
 @endsection

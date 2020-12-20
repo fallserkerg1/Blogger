@@ -39,7 +39,18 @@ Route::get('/inicio','Blog\BlogController@index')->name('index');
 Route::get('inicio/{slug}','Blog\BlogController@post')->name('post');
 Route::get('category/{slug}','Blog\BlogController@category')->name('category');
 Route::get('tag/{slug}','Blog\BlogController@tag')->name('tag');
-//admin
+//admin //tag
 Route::resource('tags', 'Admin\TagController');
+Route::post('/crear','Admin\TagController@store')->name('store');
+Route::patch('/crear/{fila}','Admin\TagController@update')->name('update');
+//category
 Route::resource('categories', 'Admin\CategoryController');
+Route::post('/crear','Admin\CategoryController@store')->name('registro');
+Route::patch('/crear/{fila}','Admin\CategoryController@update')->name('actualizar');
+//post
 Route::resource('posts', 'Admin\PostController');
+//usuarios
+Route::get('usuarios','UsuariosController@index')->name('usuarios');
+Route::get('/usuarios/{usuarios}/editar','UsuariosController@edit')->name('editarUser');
+Route::patch('/usuarios/{usuarios}','UsuariosController@update')->name('updateUser');
+Route::delete('usuarios/{usuarios}','UsuariosController@destroy')->name('destroy');

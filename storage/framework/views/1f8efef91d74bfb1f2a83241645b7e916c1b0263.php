@@ -7,10 +7,12 @@
 		<div class="col-lg-8 col-md-10 mx-auto">
 			<div class="card-body">
 			<div class="panel-heading">
-				<h2>Lista de Etiquetas</h2><br>
-				<a href="<?php echo e(route('tags.create')); ?>" class="btn btn-sm btn-primary pull-right">
+				<h2>Lista de Etiquetas</h2>
+				<a href="<?php echo e(route('tags.create')); ?>" style ="float:right;" class="btn btn-outline-info pull-right">
 					Crear
-				</a>				
+				</a>	
+        <br>
+        <br>			
 			</div>
 		<div class="panel-body">
 				<div class="card-body">
@@ -19,7 +21,7 @@
                   <tr>
                     <th width="10px">ID</th>
                     <th>Nombre</th>
-                    <th colspan="3">&nbsp;</th>
+                    <th colspan="3">&nbsp;Acciones</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -28,7 +30,7 @@
                     <td><?php echo e($tag->id); ?></td>
                     <td><?php echo e($tag->name); ?></td>
                     <td width="10px">
-                    	<a href="<?php echo e(route('tags.show', $tag->id )); ?>" class="btn btn-primary">
+                    	<a href="<?php echo e(route('tags.show', $tag->id )); ?>" type="button" class="btn btn-primary">
                     		Ver
                     	</a>
                     </td>
@@ -38,9 +40,10 @@
                     	</a>
                     </td>
                     <td width="10px">
-                    	<a href="<?php echo e(route('tags.show', $tag->id )); ?>" class="btn btn-danger">
-                    		Eliminar
-                    	</a>
+                    	<form method="POST" action="<?php echo e(route('tags.destroy',$tag->id)); ?>">
+				          <?php echo csrf_field(); ?> <?php echo method_field('DELETE'); ?>
+				            <button class="btn btn-danger">Eliminar</button>
+				        </form>	
                     </td>
                   </tr>
                   	<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -53,6 +56,5 @@
 		</div>
 	</div>
 </div>
-
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\Blogger\resources\views/admin/tags/index.blade.php ENDPATH**/ ?>

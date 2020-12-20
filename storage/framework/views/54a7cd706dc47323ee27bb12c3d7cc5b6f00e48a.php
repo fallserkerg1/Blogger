@@ -2,9 +2,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header"><?php echo e(__('Register')); ?></div>
-
+                <h2><?php echo e(__('Register')); ?></h2>
                 <div class="card-body">
                     <form method="POST" action="<?php echo e(route('register')); ?>">
                         <?php echo csrf_field(); ?>
@@ -111,10 +109,12 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                     </form>
                 </div>
-            </div>
+                <br>
+                <a href="<?php echo e(route('usuarios')); ?>" style ="float:right;" class="btn btn-outline-info pull-right">Volver</a>
         </div>
     </div>
 </div>
+
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\Blogger\resources\views/auth/register.blade.php ENDPATH**/ ?>

@@ -12,7 +12,7 @@
 
   <!-- Bootstrap core CSS -->
   <link href="<?php echo e(asset('plantilla/vendor/bootstrap/css/bootstrap.min.css')); ?>" rel="stylesheet">
-
+  <link rel="icon" type="image/png" href="<?php echo e(asset('base/images/icons/favicon.ico')); ?>"/>
   <!-- Custom fonts for this template -->
   <link href="<?php echo e(asset('plantilla/vendor/fontawesome-free/css/all.min.css')); ?>" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -39,9 +39,6 @@
             <a class="nav-link" href="<?php echo e(route('index')); ?>">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Sobre Nosotros</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="#">Catálogo</a>
           </li>
           <li class="nav-item">
@@ -57,9 +54,8 @@
               </li> -->
           <?php endif; ?>
       <?php else: ?>
-      <li class="nav-item">
-                  <a class="nav-link" href="<?php echo e(route('register')); ?>"><?php echo e(__('Register')); ?></a>
-              </li>
+      <!-- <li class="nav-item"><a class="nav-link" href="<?php echo e(route('register')); ?>"><?php echo e(__('Register')); ?></a></li> -->
+      <li class="nav-item dropdown"><a class="nav-link" href="<?php echo e(route('usuarios')); ?>">Usuarios</a></li>
       <li class="nav-item dropdown"><a class="nav-link" href="<?php echo e(route('tags.index')); ?>">Etiquetas</a></li>
       <li class="nav-item dropdown"><a class="nav-link" href="<?php echo e(route('categories.index')); ?>">Categorías</a></li>
       <li class="nav-item dropdown"><a class="nav-link" href="<?php echo e(route('posts.index')); ?>">Entradas</a></li>
@@ -119,7 +115,7 @@
 </div>
 -->
   <!-- Header One Pic-->
-  <header class="masthead" style="background-image: url('https://www.kolpaper.com/wp-content/uploads/2020/05/Wallpaper-Tokyo-Ghoul-for-Desktop.jpg')">
+  <header class="masthead" style="background-image: url('https://3.bp.blogspot.com/-AZiS5SQ4Q4g/VKLiyksE9RI/AAAAAAAAA68/eigiEC9eWVs/s1600/463463_465736616797594_1697461976_o.jpg')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
@@ -132,4 +128,6 @@
       </div>
     </div>
   </header>
+
+  
 <?php echo $__env->yieldContent('content'); ?><?php /**PATH C:\xampp\htdocs\Blogger\resources\views/layouts/header.blade.php ENDPATH**/ ?>

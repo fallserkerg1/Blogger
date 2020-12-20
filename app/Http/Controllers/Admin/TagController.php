@@ -48,8 +48,10 @@ class TagController extends Controller
 
         $tag = Tag::create($request->all());
 
-        return redirect()->route('admin.tags.edit', $tag->id)
-            ->with('info','Etiqueta creada con éxito');
+        /*return redirect()->route('admin.tags.index', $tag->id)
+            ->with('info','Etiqueta creada con éxito');*/
+
+        return redirect('tags')->with('info','Etiqueta Creada Correctamente');
     }
 
     /**
@@ -92,8 +94,9 @@ class TagController extends Controller
         //validar
         $tag->fill($request->all())->save();
 
-        return redirect()->route('admin.tags.edit', $tag->id)
-            ->with('info','Etiqueta actualizada con éxito'); 
+        /*return redirect()->route('admin.tags.edit', $tag->id)
+            ->with('info','Etiqueta actualizada con éxito'); */
+        return redirect('tags')->with('info', 'Actualizado Correctamente');
     }
 
     /**
@@ -106,6 +109,6 @@ class TagController extends Controller
     {
         $tag = Tag::find($id)->delete();
 
-        return back()->with('info', 'Eliminado correctamente');
+        return back()->with('info', 'Eliminado Correctamente');
     }
 }

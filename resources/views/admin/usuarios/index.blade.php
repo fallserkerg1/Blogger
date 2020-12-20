@@ -17,12 +17,12 @@
 		<div class="panel-body">
 				<div class="card-body">
                 <table class="table table-bordered table-hover">
-                  <thead>
+                  <thead class="thead-dark">
                   <tr>
-                    <th width="10px">ID</th>
-                    <th>Nombre</th>
-                    <th>Email</th>
-                    <th colspan="3">&nbsp;Acciones</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Email</th>
+                    <th scope="col" colspan="3">&nbsp;Acciones</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -31,9 +31,6 @@
                     <td>{{ $usuario->id }}</td>
                     <td>{{ $usuario->name }}</td>
                     <td>{{ $usuario->email }}</td>
-                    <td width="10px">
-                    	<a href="{{ route('editarUser', $usuario)}}" class="btn btn-success">Editar</a>
-                    </td>
                     <td width="10px">
                     	<form method="POST" action="{{ route('destroy',$usuario)}}">
 				          @csrf @method('DELETE')

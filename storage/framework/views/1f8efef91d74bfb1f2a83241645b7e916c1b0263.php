@@ -17,7 +17,7 @@
 		<div class="panel-body">
 				<div class="card-body">
                 <table class="table table-bordered table-hover">
-                  <thead>
+                  <thead class="thead-dark">
                   <tr>
                     <th width="10px">ID</th>
                     <th>Nombre</th>

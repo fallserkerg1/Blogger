@@ -49,6 +49,8 @@ Route::post('/crear','Admin\CategoryController@store')->name('registro');
 Route::patch('/crear/{fila}','Admin\CategoryController@update')->name('actualizar');
 //post
 Route::resource('posts', 'Admin\PostController');
+Route::post('/posts','Admin\PostController@store')->name('guardar');
+Route::patch('/posts/{posts}','Admin\PostController@update')->name('updatePost');
 //usuarios
 Route::get('usuarios','UsuariosController@index')->name('usuarios');
 Route::get('/usuarios/{usuarios}/editar','UsuariosController@edit')->name('editarUser');

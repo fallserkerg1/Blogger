@@ -22,7 +22,7 @@
 					  </div>
 					<div class="form-group">
 					    <label for="exampleInputPassword1">Body</label>
-					    <input type="text" class="form-control" id="body" name="body" value="{{ $categories->body}}">
+					    <textarea type="text" class="form-control" id="body" rows="10" name="body">{{ $categories->body}}</textarea>
 					 </div>
 					  <input type="submit" value ="Enviar" name="" class="btn btn-primary">
 					</form>

@@ -23,7 +23,8 @@
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Body</label>
-    <input type="text" class="form-control" id="body" name="body">
+    <textarea type="text" class="form-control" id="body" name="body" rows="5"></textarea>
+
   </div>
   <input type="submit" value ="Enviar" name="" class="btn btn-primary">
 </form>

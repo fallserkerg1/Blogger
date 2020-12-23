@@ -39,9 +39,6 @@
             <a class="nav-link" href="{{ route('index')}}">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Catálogo</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="#">Contactame</a>
           </li>
       @guest

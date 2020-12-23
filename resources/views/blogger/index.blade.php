@@ -21,7 +21,7 @@
             </a>
           <p class="post-meta">Posted by
             <a href="#">Admin</a>
-            on September 24, 2019</p>
+            on {{ $post->updated_at}}</p>
         </div>
         @endforeach
         {{ $posts->render() }}

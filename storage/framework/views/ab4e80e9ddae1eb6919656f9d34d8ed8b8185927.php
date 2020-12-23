@@ -20,7 +20,7 @@
             </a>
           <p class="post-meta">Posted by
             <a href="#">Admin</a>
-            on September 24, 2019</p>
+            on <?php echo e($post->updated_at); ?></p>
         </div>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         <?php echo e($posts->render()); ?>

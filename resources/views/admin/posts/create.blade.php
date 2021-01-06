@@ -10,7 +10,7 @@
 				<h2>Crear Entrada</h2><br>				
 			</div>
 		  <div class="panel-body">
-				{!! Form::open(['route' => 'tags.store'])!!}
+				{!! Form::open(['route' => 'guardar'])!!}
 
             @include('admin.posts.partials.form')
             

@@ -12,11 +12,38 @@
   {{ Form::text('slug', '', ['class' => 'form-control', 'id' => 'slug']) }}
 </div>
 <div class="form-group">
-  {{ Form::label('body', 'Descripción') }}
+  {{ Form::label('file', 'Imagen') }}
+  {{ Form::file('file') }}
+</div>
+<div class="form-group">
+  {{ Form::label('status', 'Estado') }}
+  <label>
+    {{ Form::radio('status','PUBLISH')}} Publicado
+  </label>
+<label>
+    {{ Form::radio('status','DRAFT')}} Borrador
+  </label>
+</div>
+<div class="form-group">
+  {{ Form::label('tags', 'Etiquetas') }}
+  <div>
+    @foreach($tags as $tag)
+      <label>
+        {{ Form::checkbox('tags[]','$tag->id') }} {{ $tag->name}}
+      </label>
+    @endforeach
+  </div>
+</div>
+<div class="form-group">
+  {{ Form::label('excerpt', 'Extracto') }}
+  {{ Form::textarea('excerpt', '', ['class' => 'form-control', 'id' => 'excerpt','rows' => '2']) }}
+</div>
+<div class="form-group">
+  {{ Form::label('body', 'Contenido') }}
   {{ Form::textarea('body', '', ['class' => 'form-control']) }}
 </div>
 <div class="form-group">
-  {{ Form::submit('Guardar', ['class' => 'btn btn-primary']) }}
+  {{ Form::submit('Publicar', ['class' => 'btn btn-primary']) }}
 </div>
 
 
@@ -48,7 +75,7 @@
 
 
 @section('scripts')
-	<script type="text/javascript" src="{{ asset('vendor/stringToSlug/jquery.stringToSlug.min.js')}}"></script>
+	<script type="text/javascript" src="{{ asset('java/stringToSlug/jquery.stringToSlug.min.js')}}"></script>
 	<script>
 		$(document).ready(function(){
 			$("#name,#slug").stringToSlug({

@@ -39,7 +39,13 @@
             <a class="nav-link" href="<?php echo e(route('index')); ?>">Inicio</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="#">Quienes Somos</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="#">Contactame</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Dona Algo</a>
           </li>
       <?php if(auth()->guard()->guest()): ?>
           <li class="nav-item">

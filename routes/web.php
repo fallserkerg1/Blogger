@@ -39,14 +39,14 @@ Route::get('/inicio','Blog\BlogController@index')->name('index');
 Route::get('inicio/{slug}','Blog\BlogController@post')->name('post');
 Route::get('category/{slug}','Blog\BlogController@category')->name('category');
 Route::get('tag/{slug}','Blog\BlogController@tag')->name('tag');
-//admin //tag
+//tag
 Route::resource('tags', 'Admin\TagController');
-Route::post('/crear','Admin\TagController@store')->name('store');
-Route::patch('/crear/{fila}','Admin\TagController@update')->name('update');
+Route::post('/crear','Admin\TagController@store')->name('registroII');
+Route::patch('/create/{fila}','Admin\TagController@update')->name('actualizar');
 //category
 Route::resource('categories', 'Admin\CategoryController');
 Route::post('/crear','Admin\CategoryController@store')->name('registro');
-Route::patch('/crear/{fila}','Admin\CategoryController@update')->name('actualizar');
+Route::patch('/crear/{fila}','Admin\CategoryController@update')->name('update');
 //post
 Route::resource('posts', 'Admin\PostController');
 Route::post('/posts','Admin\PostController@store')->name('guardar');

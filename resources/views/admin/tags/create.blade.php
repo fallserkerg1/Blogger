@@ -15,7 +15,7 @@
             @include('admin.tags.partials.form')
             
         {!! Form::close()!!}
-      </div>
+      	</div>
 		</div>
 	</div>
 </div>

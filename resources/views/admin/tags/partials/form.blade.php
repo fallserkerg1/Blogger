@@ -11,7 +11,7 @@
 	{{ Form::submit('Guardar', ['class' => 'btn btn-success']) }}
 </div>
 -->
-<form method="POST" action="{{ route('store')}}">
+<form method="POST" action="">
 	@csrf
   <div class="form-group">
     <label for="exampleInputEmail1">Nombre de la Etiqueta</label>
@@ -27,8 +27,6 @@
 <div>
 	<a href="{{ route('tags.index')}}" style ="float:right;" class="btn btn-success">Volver</a>
 </div>
-
-
 
 @section('scripts')
 	<script type="text/javascript" src="{{ asset('java/stringToSlug/jquery.stringToSlug.min.js')}}"></script>

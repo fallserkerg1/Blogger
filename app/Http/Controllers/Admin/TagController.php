@@ -8,6 +8,7 @@ use App\Http\Requests\TagStoreRequest;
 use App\Http\Requests\TagUpdateRequest;
 use App\Tag;
 
+
 class TagController extends Controller
 {
     public function __construct()
@@ -89,10 +90,9 @@ class TagController extends Controller
      */
     public function update(TagUpdateRequest $request, $id)
     {
-
-        $tag = Tag::find($id);
+        $tags = Tag::find($id);
         //validar
-        $tag->fill($request->all())->save();
+        $tags->fill($request->all())->save();
 
         /*return redirect()->route('admin.tags.edit', $tag->id)
             ->with('info','Etiqueta actualizada con éxito'); */

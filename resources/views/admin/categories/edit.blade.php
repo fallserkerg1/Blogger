@@ -10,7 +10,7 @@
 				<h2>Editar Categoria</h2><br>				
 			</div>
 		  		<div class="panel-body">
-					<form method="POST" action="{{ route('actualizar', $categories)}}">
+					<form method="POST" action="{{ route('update', $categories)}}">
 						@csrf @method('PATCH')
 					  <div class="form-group">
 					    <label for="exampleInputEmail1">Nombre de la Categoria</label>

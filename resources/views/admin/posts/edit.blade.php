@@ -7,10 +7,9 @@
 <div class="container">
 	<div class="row">
 		<div class="col-lg-8 col-md-10 mx-auto">
-			<div class="card-body">
-				<div class="panel-heading">
-					<h2>Editar Entrada</h2><br>				
-				</div>
+			<div class="panel-heading">
+				<h2>Editar Post</h2><br>				
+			</div>
 		  			<div class="panel-body">
 						<form method="POST" action="{{ route('updatePost', $posts)}}">
 						@csrf @method('PATCH')
@@ -20,11 +19,11 @@
 						</div>
 						<div class="form-group">
 							<label for="exampleInputEmail1">Nombre de la Entrada</label>
-						    <input type="text" class="form-control" id="name" name="name" value="{{ $posts->name}}">
+						    <input type="text" class="form-control" id="name" name="name" value="{{ $posts->name}}" required>
 						</div>
 						<div class="form-group">
 						   <label for="exampleInputPassword1">URL Amigable</label>
-						   <input type="text" class="form-control" id="slug" name="slug" value="{{ $posts->slug}}">
+						   <input type="text" class="form-control" id="slug" name="slug" value="{{ $posts->slug}}" required>
 						</div>
 						<!--
 						<div class="form-group">
@@ -34,7 +33,7 @@
 						-->
 						<div class="form-group">
 						   <label for="exampleInputPassword1">Direccion de Imagen</label>
-						   <input type="text" class="form-control" id="file" name="file" value="{{ $posts->file}}">
+						   <input type="text" class="form-control" id="file" name="file" value="{{ $posts->file}}" required>
 						</div>
 						<!--
 						<div class="form-group">
@@ -48,11 +47,21 @@
 						</div>
 						-->
 						<div class="form-group">
-							<label>Estatus</label>
-							<select class="form-control" name="status" id="status">
-						      <option value="PUBLISHED">Publicado</option>
-						      <option value="DRAFT">Borrador</option>
-    						</select>
+						  <div>
+						    <label>Estatus</label>
+						  </div>
+						<div class="form-check">
+						  <input class="form-check-input" type="radio" name="status" id="exampleRadios1" value="PUBLISHED" checked>
+						  <label class="form-check-label" for="exampleRadios1">
+						    Publicado
+						  </label>
+						</div>
+						<div class="form-check">
+						  <input class="form-check-input" type="radio" name="status" id="exampleRadios2" value="DRAFT">
+						  <label class="form-check-label" for="exampleRadios2">
+						    Borrador
+						  </label>
+						</div>
 						</div>
 
 						<div class="form-group">
@@ -65,24 +74,22 @@
 						    @endforeach
 						  </div>
 						</div>
+
 						<div class="form-group">
 						    <label for="exampleInputPassword1">Extracto</label>
-						    <textarea type="text" class="form-control" rows="2" id="excerpt" name="excerpt">{{ $posts->excerpt}}</textarea>
+						    <textarea type="text" class="form-control" rows="2" id="excerpt" name="excerpt" required>{{ $posts->excerpt}}</textarea>
 						</div>
 						<div class="form-group">
 						    <label for="exampleInputPassword1">Contenido</label>
-						    <textarea type="text" class="form-control" rows="10" id="body" name="body">{{ $posts->body}}</textarea>
+						    <textarea type="text" class="form-control" rows="10" id="body" name="body" required>{{ $posts->body}}</textarea>
 						</div>
-							<input type="submit" value ="Enviar" name="" class="btn btn-primary">
+							<input type="submit" value ="Publicar" name="" class="btn btn-primary btn-lg btn-block">
 							</form>
 							<br>
-						<div>
-							<a href="{{ route('posts.index')}}" style ="float:right;" class="btn btn-success">Volver</a>
-						</div>
+							<a href="{{ route('posts.index')}}" style ="float:right;" class="btn btn-outline-secondary">Volver</a>
       		</div>
 		</div>
 	</div>
-</div>
 
 @section('scripts')
 	<script type="text/javascript" src="{{ asset('java/stringToSlug/jquery.stringToSlug.min.js')}}"></script>

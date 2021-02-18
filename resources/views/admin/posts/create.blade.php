@@ -4,10 +4,10 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-lg-8 col-md-10 mx-auto">
+		<div class="col-lg-10 col-md-12 mx-auto">
 			<div class="card-body">
 			<div class="panel-heading">
-				<h2>Crear Entrada</h2><br>				
+				<h2>Crear nuevo Post</h2><br>				
 			</div>
 		  <div class="panel-body">
 				{!! Form::open(['route' => 'guardar'])!!}

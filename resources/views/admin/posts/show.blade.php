@@ -12,12 +12,12 @@
 		  	<div class="panel-body">
 				<p><strong>Nombre</strong> {{ $post->name }}</p>
 				<p><strong>Slug</strong> {{ $post->slug }}</p>
-				<p><strong>Slug</strong> {{ $post->excerpt }}</p>
+				<p><strong>Extracto</strong> {{ $post->excerpt }}</p>
 				<p><strong>Contenido</strong> {{ $post->body }}</p>
       		</div>
 		</div>
 		<div>
-		<a href="{{ route('tags.index')}}" class="btn btn-primary">Volver</a>
+		<a href="{{ route('posts.index')}}" class="btn btn-outline-secondary">Volver</a>
 		</div>
 	</div>
 </div>

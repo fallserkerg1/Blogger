@@ -12,7 +12,7 @@
 
   <!-- Bootstrap core CSS -->
   <link href="{{ asset('plantilla/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-  <link rel="icon" type="image/png" href="{{ asset('base/images/icons/favicon.ico')}}"/>
+  <link rel="icon" type="image/png" href="{{ asset('base/images/icons/psy.ico')}}"/>
   <!-- Custom fonts for this template -->
   <link href="{{ asset('plantilla/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>

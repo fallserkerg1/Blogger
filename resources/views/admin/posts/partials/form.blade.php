@@ -4,16 +4,16 @@
   {{ Form::select('category_id', $categories, null, ['class' => 'form-control']) }}
 </div>
 <div class="form-group">
-  {{ Form::label('name', 'Nombre de la Entrada') }}
-  {{ Form::text('name', '', ['class' => 'form-control', 'id' => 'name']) }}
+  <label for="exampleInputEmail1">Nombre de la Entrada</label>
+  <input type="text" class="form-control" id="name" name="name" required>
 </div>
 <div class="form-group">
-  {{ Form::label('slug', 'URL Amigable') }}
-  {{ Form::text('slug', '', ['class' => 'form-control', 'id' => 'slug']) }}
+   <label for="exampleInputPassword1">URL Amigable</label>
+   <input type="text" class="form-control" id="slug" name="slug" required>
 </div>
 <div class="form-group">
   <label for="exampleInputPassword1">Direccion de Imagen</label>
-  <input type="text" class="form-control" id="file" name="file">
+  <input type="text" class="form-control" id="file" name="file" required>
 </div>
 <!--
 <div class="form-group">
@@ -33,12 +33,31 @@
 </div>
 -->
 <div class="form-group">
+  <div>
+    <label>Estatus</label>
+  </div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="status" id="exampleRadios1" value="PUBLISHED" checked>
+  <label class="form-check-label" for="exampleRadios1">
+    Publicado
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="status" id="exampleRadios2" value="DRAFT">
+  <label class="form-check-label" for="exampleRadios2">
+    Borrador
+  </label>
+</div>
+</div>
+<!--
+<div class="form-group">
   <label>Estatus</label>
     <select class="form-control" name="status" id="status">
       <option value="PUBLISHED">Publicado</option>
       <option value="DRAFT">Borrador</option>
     </select>
 </div>
+-->
 <div class="form-group">
   {{ Form::label('tags', 'Etiquetas') }}
   <div>
@@ -50,15 +69,15 @@
   </div>
 </div>
 <div class="form-group">
-  {{ Form::label('excerpt', 'Extracto') }}
-  {{ Form::textarea('excerpt', '', ['class' => 'form-control', 'id' => 'excerpt','rows' => '2']) }}
+    <label for="exampleInputPassword1">Extracto</label>
+    <textarea type="text" class="form-control" rows="2" id="excerpt" name="excerpt" required></textarea>
 </div>
 <div class="form-group">
-  {{ Form::label('body', 'Contenido') }}
-  {{ Form::textarea('body', '', ['class' => 'form-control']) }}
+    <label for="exampleInputPassword1">Contenido</label>
+    <textarea type="text" class="form-control" rows="10" id="body" name="body" required></textarea>
 </div>
 <div class="form-group">
-  {{ Form::submit('Publicar', ['class' => 'btn btn-primary']) }}
+  {{ Form::submit('Publicar', ['class' => 'btn btn-primary btn-lg btn-block']) }}
 </div>
 
 
@@ -83,7 +102,7 @@
 -->
 <br>
 <div>
-	<a href="{{ route('posts.index')}}" style ="float:right;" class="btn btn-success">Volver</a>
+	<a href="{{ route('posts.index')}}" style ="float:right;" class="btn btn-outline-secondary">Volver</a>
 </div>
 
 

@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-            <h1><?php echo e($post->name); ?></h1>
+            <h1><center><?php echo e($post->name); ?></center></h1>
             <br>
             <?php if($post->file): ?>
             <img src="<?php echo e($post->file); ?>" class="img-fluid" alt="">
@@ -129,7 +129,7 @@
               </a>
             </li>
           </ul>
-          <p class="copyright text-muted">Desarrolado por Yoshua Soto & Moises Ramirez &copy; 2021</p>
+          <p class="copyright text-muted">Desarrolado por <a href="#">Yoshua Soto</a> &copy; 2021</p>
         </div>
       </div>
     </div>

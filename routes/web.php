@@ -32,7 +32,10 @@ Route::resource('posts', 'Admin\PostController');
 */
 
 // Plantilla
-
+//navegación
+Route::get('/quienes_somos','VistasController@Qsomos')->name('somos');
+Route::get('/contactame','VistasController@index')->name('contacto');
+Route::get('/dona_algo','VistasController@Dalgo')->name('donacion');
 
 //web
 Route::get('/inicio','Blog\BlogController@index')->name('index');

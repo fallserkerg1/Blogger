@@ -26,10 +26,17 @@
 						   <label for="exampleInputPassword1">URL Amigable</label>
 						   <input type="text" class="form-control" id="slug" name="slug" value="{{ $posts->slug}}">
 						</div>
+						<!--
 						<div class="form-group">
 						  {{ Form::label('file', 'Imagen') }}
 						  {{ Form::file('file') }}
 						</div>
+						-->
+						<div class="form-group">
+						   <label for="exampleInputPassword1">Direccion de Imagen</label>
+						   <input type="text" class="form-control" id="file" name="file" value="{{ $posts->file}}">
+						</div>
+						<!--
 						<div class="form-group">
 						  {{ Form::label('status', 'Estado') }}
 						  <label>
@@ -39,6 +46,15 @@
 						    {{ Form::radio('status','DRAFT')}} Borrador
 						  </label>
 						</div>
+						-->
+						<div class="form-group">
+							<label>Estatus</label>
+							<select class="form-control" name="status" id="status">
+						      <option value="PUBLISHED">Publicado</option>
+						      <option value="DRAFT">Borrador</option>
+    						</select>
+						</div>
+
 						<div class="form-group">
 						  {{ Form::label('tags', 'Etiquetas') }}
 						  <div>

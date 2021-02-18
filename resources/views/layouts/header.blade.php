@@ -39,13 +39,13 @@
             <a class="nav-link" href="{{ route('index')}}">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Quienes Somos</a>
+            <a class="nav-link" href="{{ route('somos')}}">Quienes Somos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contactame</a>
+            <a class="nav-link" href="{{ route('contacto')}}">Contactame</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Dona Algo</a>
+            <a class="nav-link" href="{{ route('donacion')}}">Dona Algo</a>
           </li>
       @guest
           <li class="nav-item">

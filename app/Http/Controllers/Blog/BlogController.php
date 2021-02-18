@@ -16,7 +16,7 @@ class BlogController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-        $posts = Post::orderBy('id','DESC')->where('status', 'PUBLISHED')->paginate(5);
+        $posts = Post::orderBy('id','DESC')->where('status', 'PUBLISHED')->paginate(8);
 
         return view('blogger.index', compact('posts'));
     }
